@@ -1,0 +1,332 @@
+* {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 微软雅黑; //以1080P做设计稿，用其他的话太麻烦，还得换算
+    font-size: calc(100vw / 19.2);
+    color: $color;
+    user-select: none;
+    cursor: default;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+button,
+input,
+textarea {
+    display: block;
+    outline: none;
+    border: none;
+    background: none;
+    transition: all 0.5s;
+}
+
+.tab,
+form {
+    display: flex;
+    align-items: center;
+}
+
+form {
+    justify-content: space-around;
+}
+
+.tab {
+    justify-content: space-between;
+}
+
+//公共基础组件
+button,
+input,
+textarea {
+    display: block;
+    width: 280px;
+    outline: none;
+    border: none;
+    font: 15px Microsoft Yahei;
+}
+
+button,
+input {
+    height: 40px;
+    line-height: 40px;
+}
+
+button {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    background: none;
+    box-sizing: border-box;
+    height: 50px;
+    color: white;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+button[disabled] {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+input,
+textarea {
+    text-indent: 25px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+
+    &::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    &.search {
+        background: #e4e9ec;
+        text-indent: 15px;
+        color: gray;
+
+        &::-webkit-input-placeholder {
+            color: gray;
+        }
+    }
+}
+
+textarea {
+    resize: none;
+    padding: 5px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+
+    .save,
+    .cancel {
+        width: 20px;
+    }
+}
+
+//图标
+.iconfont {
+
+    &.lg,
+    &.sm {
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+
+    &.lg {
+        font-size: 32px;
+    }
+
+    &.sm {
+        font-size: 25px;
+    }
+
+    &.lg:hover,
+    &.sm:hover {
+        opacity: 1;
+    }
+
+    &.margin {
+        margin: 0 20px;
+    }
+
+    &.icon-back {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        z-index: 100;
+    }
+}
+
+//列表
+li {
+    font-size: 15px;
+    line-height: 40px;
+    transition: all 0.3s ease-out;
+    transform: translateX(0px);
+    color: rgba(255, 255, 255, 0.6);
+
+    &.active,
+    &:hover {
+        transform: translateX(7px);
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .iconfont {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+//头像
+.user-avatar {
+    background-size: cover;
+    border-radius: 50%;
+
+    &.sm {
+        width: 32px;
+        height: 32px;
+    }
+
+    &.lg {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+//滤镜
+.blur {
+    filter: blur(7px);
+}
+
+//分界线
+hr {
+    border: none;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+//列表
+table {
+    width: 100%;
+    text-align: left;
+
+    td,
+    th {
+        padding: 6px;
+        text-indent: 10px;
+    }
+
+    td {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    th {
+        &.th-id {
+            width: 10%;
+        }
+
+        &.th-song {
+            width: 35%;
+        }
+
+        &.th-singer {
+            width: 25%;
+        }
+
+        &.th-album {
+            width: 30%;
+        }
+    }
+}
+
+//选项卡
+.tab,
+.slider-bar {
+    margin: 6px auto;
+}
+
+.tab {
+    width: fit-content;
+    height: 32px;
+
+    a {
+        width: 100px;
+        height: 100%;
+        line-height: 32px;
+        text-align: center;
+    }
+}
+
+//滑块
+.slider-bar {
+    width: 200px;
+
+    .slider {
+        width: 80px;
+        height: 3px;
+        margin-left: 10px;
+    }
+}
+
+//表单
+form {
+    box-sizing: border-box;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+//提示
+.alert {
+    display: none;
+    width: 260px;
+    height: 80px;
+    background: rgba(0, 0, 0, .8);
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    position: absolute;
+    left: calc(50% - 130px);
+    top: 300px;
+    border-radius: 10px;
+    z-index: 200;
+    font-size: 18px;
+
+    .iconfont {
+        font-size: 30px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+}
+
+
+#header,
+.header-menu,
+.search-bar,
+.icons,
+li,
+#footer,
+.play-group,
+.play-status,
+.play-volume,
+.play-list,
+.mv-list {
+    @include flex
+}
+
+.play-group,
+.play-volume,
+.play-status,
+.mv-list,
+.play-list {
+    justify-content: space-around;
+}
+
+.icons,
+.header-menu,
+#footer {
+    justify-content: space-between;
+}
+
+@keyframes rotating {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

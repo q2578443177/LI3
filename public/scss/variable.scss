@@ -1,0 +1,85 @@
+$ymred: #952a1d;
+$bg:linear-gradient(45deg, #29291d, #480016);
+$color:#a58a62;
+$hover:#480016;
+$border:#3a4833;
+$border1: #29291d;
+
+@mixin full {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin fullscreen {
+    position: relative;
+    top: 0;
+    left: 0;
+    @include full;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+@mixin round-m($val) {
+    width: $val;
+    height: $val;
+    text-align: center;
+    line-height: $val;
+}
+
+@mixin round($val) {
+    width: $val;
+    height: $val;
+    text-align: center;
+    line-height: $val;
+    border: .1rem solid $border;
+    border-radius: 50%;
+    background: $bg;
+    color: $color;
+    font-size: .6rem;
+}
+
+@mixin rect-m ($width, $height) {
+    width: $width;
+    height: $height;
+    background: $bg;
+    color: $color;
+    font-size: 0.4rem;
+}
+
+@mixin rect ($width, $height) {
+    width: $width;
+    height: $height;
+    box-sizing: border-box;
+    border: .1rem solid $border;
+    border-radius: 0.3rem;
+    background: $bg;
+    box-shadow: 0 0 0.5rem black;
+    color: $color;
+    font-size: 0.4rem;
+}
+
+@mixin cc($width, $height) {
+    width: $width;
+    height: $height;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -$width/2;
+    margin-top: -$height/2;
+}
+
+@mixin ct($width, $height, $top) {
+    width: $width;
+    height: $height;
+    position: absolute;
+    left: 50%;
+    margin-left: -$width/2;
+    margin-top: $top;
+}
