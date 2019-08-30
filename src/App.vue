@@ -77,7 +77,8 @@
         height: 700px;
         border-radius: 20px;
         box-shadow: 10px 10px 50px gray;
-        transition-duration: all 0.5s;
+        transition-property: height, width;
+        transition-duration: 0.5s;
         cursor: default;
         color: rgba(255, 255, 255, 0.8);
         background: #686669;
