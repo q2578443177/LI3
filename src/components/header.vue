@@ -3,14 +3,14 @@
         <div class="logo"></div>
         <div class="header-menu">
             <div class="search-bar">
-                <input class="search" placeholder="搜索音乐，MV..." />
+                <input class="search" :placeholder="search_prompt" key-enter/>
             </div>
             <div class="icons">
                 <div class="user">
                     <div class="user-avatar sm">
                         <i class="lg iconfont icon-user"></i>
                     </div>
-                    <span class="user-nickname">欢迎！</span>
+                    <span class="user-nickname">{{username}}</span>
                 </div>
                 <i class="lg iconfont icon-skin"></i>
                 <i class="lg iconfont icon-setting"></i>
@@ -18,12 +18,38 @@
             </div>
         </div>
     </div>
-</template><script>export default {
-        name: 'vheader'
+</template>
 
+<script>
+    import {
+        mapState,
+        mapMutations,
+        mapActions
+    } from 'vuex';
+    export default {
+        name: 'vheader',
+        data() {
+            return {
+                search_prompt: '搜索音乐，MV...',
+                username: '欢迎！'
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+        },
+        computed: {
+
+        },
+        methods: {
+
+        },
     }
 
-</script><style lang="scss"scoped>
+</script>
+
+<style lang="scss"scoped>
     #header {
         width: 100%;
         height: 60px;
